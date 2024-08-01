@@ -1,7 +1,9 @@
-import { capitalize } from './functions.js';
+import { capitalize, reverseString, calculator } from './functions.js';
 
 test('Function(s) should exist', () => {
     expect(capitalize).toBeDefined();
+    expect(reverseString).toBeDefined();
+    expect(calculator).toBeDefined();
 });
 
 let testCapitalize = [
@@ -30,3 +32,31 @@ test('Testing Capitlize function', () => {
         expect(capitalize(e.input)).toBe(e.expected);
     });
 });
+
+let testReverse = [
+    {
+        input: 'dog',
+        expected: 'god'
+    },
+    {
+        input: 'rat',
+        expected: 'tar'
+    },
+    {
+        input: 'create',
+        expected: 'etaerc'
+    },
+    {
+        input: 'wow, what a treat!',
+        expected: '!taert a tahw ,wow'
+    }
+];
+
+test('Testing ReverseString function', () => {
+    // expect(reverseString('dog')).toBe('god');
+
+    testReverse.forEach(function (t) {
+        expect(reverseString(t.input)).toBe(t.expected);
+    })
+
+})

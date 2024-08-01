@@ -29,7 +29,7 @@ export default [
       '@stylistic/js/array-element-newline': ["error", { "minItems": 3 }]
 
     },
-    languageOptions: { globals: globals.browser }
+    // languageOptions: { globals: globals.browser }
   },
   stylisticJs.configs["all-flat"],
   // pluginJs.configs.recommended,
