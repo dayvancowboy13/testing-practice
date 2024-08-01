@@ -18,15 +18,29 @@ function reverseString(reverseThis) {
 
 }
 
-export const calcluator = {
+export const calculator = {
 
-    'add': function () {
+    'add': function (a, b) {
 
-        console.log('this adds');
+        return a + b;
 
     },
 
     'subtract': function (a, b) {
+
+        return a - b;
+
+    },
+
+    'multiply': function (a, b) {
+
+        return a * b;
+
+    },
+
+    'divide': function (a, b) {
+
+        return a / b;
 
     }
 };
