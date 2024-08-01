@@ -1,14 +1,65 @@
-import { capitalize, reverseString, calculator } from './functions.js';
-
-
+import { capitalize, reverseString, calculator, caesarCipher } from './functions.js';
 
 test('Function(s) should exist', () => {
     expect(capitalize).toBeDefined();
     expect(reverseString).toBeDefined();
+    expect(caesarCipher).toBeDefined();
 });
 
+test('Testing Caesar Ciper (just punctuation)', () => {
+    expect(caesarCipher('...', 1)).toBe('...');
+});
+
+test('Testing Caesar Ciper (with punctuation)', () => {
+    expect(caesarCipher('x.yz', 1)).toBe('y.za');
+    expect(caesarCipher('x,.yz', 1)).toBe('y,.za');
+    expect(caesarCipher('{x,.yz}', 1)).toBe('{y,.za}');
+});
+
+test('Testing Caesar Ciper (multiple letters, upper and lower case)', () => {
+    expect(caesarCipher('AbbA', 1)).toBe('BccB');
+    expect(caesarCipher('AbbA', 2)).toBe('CddC');
+    expect(caesarCipher('AbAcA', 1)).toBe('BcBdB');
+    expect(caesarCipher('ZyyXz', 1)).toBe('AzzYa');
+});
+
+test('Testing Caesar Ciper (multiple letters, upper case)', () => {
+    expect(caesarCipher('XYZ', 3)).toBe('ABC');
+    expect(caesarCipher('AAA', 1)).toBe('BBB');
+    expect(caesarCipher('ABC', 1)).toBe('BCD');
+});
+
+test('Testing Caesar Ciper (multiple letters, lower case)', () => {
+    expect(caesarCipher('aa', 1)).toBe('bb');
+    expect(caesarCipher('aa', 2)).toBe('cc');
+    expect(caesarCipher('bba', 1)).toBe('ccb');
+    expect(caesarCipher('ab', 1)).toBe('bc');
+    expect(caesarCipher('zz', 1)).toBe('aa');
+    expect(caesarCipher('aa', 2)).toBe('cc');
+    expect(caesarCipher('xyz', 1)).toBe('yza');
+});
+
+test('Testing Caesar Ciper (single letter, upper case)', () => {
+    expect(caesarCipher('B', 1)).toBe('C');
+    expect(caesarCipher('B', 2)).toBe('D');
+    expect(caesarCipher('Z', 1)).toBe('A');
+    expect(caesarCipher('Z', 2)).toBe('B');
+    expect(caesarCipher('Y', 2)).toBe('A');
+});
+
+test('Testing Caesar Cipher (single letter, lower case)', () => {
+    expect(caesarCipher('a', 1)).toBe('b');
+    expect(caesarCipher('b', 1)).toBe('c');
+    expect(caesarCipher('c', 1)).toBe('d');
+    expect(caesarCipher('c', 2)).toBe('e');
+    expect(caesarCipher('z', 1)).toBe('a');
+    expect(caesarCipher('z', 3)).toBe('c');
+    expect(caesarCipher('z', 3)).toBe('c');
+});
+
+
 test('Calculator object exists', () => {
-    expect(calculator).toBeDefined();
+    expect(calculator).toBeDefined()
 
 });
 

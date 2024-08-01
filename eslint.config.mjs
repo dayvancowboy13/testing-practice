@@ -1,17 +1,16 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import stylisticJs from '@stylistic/eslint-plugin-js';
+import jest from 'eslint-plugin-jest';
 
 export default [
   {
-    ignores: [
-      'eslint.config.mjs',
-      'webpack.config.js',
-    ]
-  },
-  {
+    files: [
+      'functions.js'
+    ],
     plugins: {
       '@stylistic/js': stylisticJs,
+      'jest': jest
 
     },
     rules: {
@@ -29,7 +28,10 @@ export default [
       '@stylistic/js/array-element-newline': ["error", { "minItems": 3 }]
 
     },
-    // languageOptions: { globals: globals.browser }
+    languageOptions: {
+      globals:
+        globals.node
+    }
   },
   stylisticJs.configs["all-flat"],
   // pluginJs.configs.recommended,
