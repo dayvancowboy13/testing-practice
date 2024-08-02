@@ -1,10 +1,10 @@
-function capitalize(capitalizeThis) {
+export function capitalize(capitalizeThis) {
 
     return capitalizeThis.toUpperCase();
 
 }
 
-function reverseString(reverseThis) {
+export function reverseString(reverseThis) {
 
     let reversedString = '';
 
@@ -88,4 +88,26 @@ export function caesarCipher(stringToShift, shiftFactor) {
 
 }
 
-export { capitalize, reverseString };
+export function analyzeArray(input) {
+
+    if (input.length === 0) return null;
+
+    return {
+        average: calculateAverage(input),
+        min: Math.min(...input),
+        max: Math.max(...input),
+        length: input.length
+    };
+
+}
+
+function calculateAverage(arr) {
+
+    const initialVal = 0;
+    const arrSum = arr.reduce((acc, curr) => acc += curr, initialVal);
+    Math.av;
+
+    return arrSum / arr.length;
+
+
+}

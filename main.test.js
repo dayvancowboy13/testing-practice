@@ -1,10 +1,55 @@
-import { capitalize, reverseString, calculator, caesarCipher } from './functions.js';
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from './functions.js';
 
 test('Function(s) should exist', () => {
 
     expect(capitalize).toBeDefined();
     expect(reverseString).toBeDefined();
     expect(caesarCipher).toBeDefined();
+    expect(analyzeArray).toBeDefined();
+
+
+});
+
+test('Testing AnalyzeArray', () => {
+
+    expect(analyzeArray([1])).toStrictEqual({
+        average: 1,
+        min: 1,
+        max: 1,
+        length: 1
+    });
+    expect(analyzeArray([2])).toStrictEqual({
+        average: 2,
+        min: 2,
+        max: 2,
+        length: 1
+    });
+    expect(analyzeArray([1, 2])).toStrictEqual({
+        average: 1.5,
+        min: 1,
+        max: 2,
+        length: 2
+    });
+    expect(analyzeArray([1, 2, 3])).toStrictEqual({
+        average: 2,
+        min: 1,
+        max: 3,
+        length: 3
+    });
+    expect(analyzeArray([
+        1,
+        8,
+        3,
+        4,
+        2,
+        6
+    ])).toStrictEqual({
+        average: 4,
+        min: 1,
+        max: 8,
+        length: 6
+    });
+    expect(analyzeArray([])).toBeNull();
 
 });
 
@@ -168,13 +213,11 @@ let addTest = [
         'a': 1,
         'b': 2,
         'expected': 3
-    },
-    {
+    }, {
         'a': 2,
         'b': 2,
         'expected': 4
-    },
-    {
+    }, {
         'a': 10,
         'b': 2,
         'expected': 12

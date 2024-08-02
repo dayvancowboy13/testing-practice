@@ -30,7 +30,7 @@ export default [
       '@stylistic/js/multiline-comment-style': ['off', 'separate-lines'],
       '@stylistic/js/function-call-argument-newline': ["error", "consistent"],
       '@stylistic/js/indent': ['warn', 4, { "SwitchCase": 1 }],
-      '@stylistic/js/array-element-newline': ["error", { "minItems": 3 }],
+      '@stylistic/js/array-element-newline': ["error", { "minItems": 4 }],
       '@stylistic/js/quote-props': ['warn', 'consistent'],
       '@stylistic/js/comma-dangle': ['warn', 'only-multiline'],
 
