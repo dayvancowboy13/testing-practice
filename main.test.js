@@ -8,9 +8,19 @@ test('Function(s) should exist', () => {
 
 });
 
+test('Testing Caesar Ciper (phrases)', () => {
+
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+    expect(caesarCipher('Wow! What a wonderful string of text?', 10)).toBe('Gyg! Grkd k gyxnobpev cdbsxq yp dohd?');
+
+});
+
 test('Testing Caesar Ciper (just punctuation)', () => {
 
     expect(caesarCipher('...', 1)).toBe('...');
+    expect(caesarCipher('./2', 2)).toBe('./2');
+    expect(caesarCipher('333', 4)).toBe('333');
+    expect(caesarCipher('/.,@#%', 10)).toBe('/.,@#%');
 
 });
 
